@@ -71,7 +71,12 @@ class _MoviesPageState extends State<MoviesPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 11, 0, 160),
-        title: const Text('Filmes'),
+        title: const Text(
+          'Filmes',
+          style: TextStyle(
+            color: Color.fromARGB(255, 192, 198, 255),
+          ),
+        ),
         automaticallyImplyLeading: false,
       ),
       body: Container(
@@ -81,7 +86,7 @@ class _MoviesPageState extends State<MoviesPage> {
             end: Alignment(1.0, -1.0),
             colors: [
               Color.fromARGB(255, 255, 255, 255),
-              Color.fromARGB(255, 163, 163, 163),
+              Color.fromARGB(255, 175, 175, 175),
             ],
           ),
         ),
@@ -96,6 +101,10 @@ class _MoviesPageState extends State<MoviesPage> {
                     height: 20,
                   ),
                   TextField(
+                    style: const TextStyle(
+                      color: Color.fromARGB(255, 192, 198, 255),
+                    ),
+                    cursorColor: const Color.fromARGB(255, 192, 198, 255),
                     decoration: fieldDecor,
                   ),
                   const SizedBox(
