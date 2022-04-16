@@ -1,8 +1,15 @@
-import 'package:avn_movies/pages/movies_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'pages/favorites.dart';
+import 'pages/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -11,11 +18,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AVN-Movies',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MoviesPage(),
+      debugShowCheckedModeBanner: false,
+      title: "AVN Movies",
+      initialRoute: '/home',
+      routes: {
+        '/home': (context) => const Home(),
+        '/favorites': (context) => const Favorites(),
+      },
+      home: const Home(),
     );
   }
 }
