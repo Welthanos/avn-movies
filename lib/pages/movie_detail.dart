@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Detail extends StatelessWidget {
+class MovieDetail extends StatelessWidget {
 
-  const Detail({ Key? key }) : super(key: key);
+  const MovieDetail({ Key? key }) : super(key: key);
 
    @override
    Widget build(BuildContext context) {
