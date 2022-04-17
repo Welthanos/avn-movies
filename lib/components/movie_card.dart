@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../pages/movie_detail.dart';
-
 class MovieCard extends StatelessWidget {
   const MovieCard(
       {Key? key,
@@ -19,7 +17,7 @@ class MovieCard extends StatelessWidget {
     return SizedBox(
       width: 300,
       child: InkWell(
-        onTap: () => const MovieDetail(),
+        onTap: () => Navigator.pushNamed(context, '/movie_detail'),
         child: Stack(
           children: [
             Padding(
@@ -35,6 +33,7 @@ class MovieCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       child: Image.network(
                         'https://image.tmdb.org/t/p/w500${posterPath}',
+                        height: 420,
                         fit: BoxFit.cover,
                       ),
                     ),

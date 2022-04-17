@@ -32,16 +32,6 @@ class _MoviesPageState extends State<MoviesPage> {
     });
   }
 
-  void pressButton() {
-    if (movieList.isEmpty) {
-      print(movieList.length);
-    } else {
-      for (var item in movieList) {
-        print(item["title"]);
-      }
-    }
-  }
-
   InputDecoration fieldDecor = InputDecoration(
     filled: true,
     fillColor: const Color.fromARGB(255, 11, 0, 160),
@@ -112,6 +102,9 @@ class _MoviesPageState extends State<MoviesPage> {
                   ),
                   Row(
                     children: const [
+                      SizedBox(
+                        height: 5,
+                      ),
                       Icon(
                         Icons.star,
                         size: 30,

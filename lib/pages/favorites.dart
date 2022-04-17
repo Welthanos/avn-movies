@@ -43,6 +43,9 @@ class _FavoritesState extends State<Favorites> {
               ),
               Row(
                 children: const [
+                  SizedBox(
+                    width: 5,
+                  ),
                   Icon(
                     MovieAppIcon.heart,
                     size: 20,
@@ -62,7 +65,7 @@ class _FavoritesState extends State<Favorites> {
                 ],
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               SizedBox(
                 height: 510,

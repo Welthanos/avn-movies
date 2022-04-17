@@ -1,3 +1,4 @@
+import 'package:avn_movies/pages/movie_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => const Home(),
         '/favorites': (context) => const Favorites(),
+        '/movie_detail': (context) => const MovieDetail(),
       },
       home: const Home(),
     );
