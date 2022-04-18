@@ -35,11 +35,16 @@ class MovieCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.network(
-                        'https://image.tmdb.org/t/p/w500$posterPath',
-                        height: 420,
-                        fit: BoxFit.cover,
-                      ),
+                      child: posterPath == null
+                          ? Container(
+                              color: Colors.blueGrey,
+                              height: 420,
+                            )
+                          : Image.network(
+                              'https://image.tmdb.org/t/p/w500$posterPath',
+                              height: 420,
+                              fit: BoxFit.cover,
+                            ),
                     ),
                   ),
                   const SizedBox(height: 15),
