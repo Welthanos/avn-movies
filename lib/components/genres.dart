@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Genres extends StatefulWidget {
-  const Genres({Key? key}) : super(key: key);
+  final String id;
+  const Genres({Key? key, required this.id}) : super(key: key);
 
   @override
   _GenresState createState() => _GenresState();
@@ -22,18 +23,18 @@ class _GenresState extends State<Genres> {
 
   Future getGenre() async {
     var url = Uri.parse(
-        "https://api.themoviedb.org/3/movie/634649?api_key=acd2834a5e053a947ed184cacbfba58b&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br");
+        "https://api.themoviedb.org/3/movie/${widget.id}?api_key=acd2834a5e053a947ed184cacbfba58b&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br");
     var response = await http.get(url);
     var list = jsonDecode(response.body)["genres"];
     setState(() {
-      genreList = [...list];
+      if (list != null) genreList = [...list];
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 250,
+      width: 290,
       height: 16,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

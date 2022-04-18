@@ -78,6 +78,8 @@ class _FavoritesState extends State<Favorites> {
                     FavoritesPagePlaceholder(),
                     FavoritesPagePlaceholder(),
                     FavoritesPagePlaceholder(),
+                    FavoritesPagePlaceholder(),
+                    FavoritesPagePlaceholder(),
                   ],
                 ),
               ),

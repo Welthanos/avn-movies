@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Posters extends StatefulWidget {
-  const Posters({Key? key}) : super(key: key);
+  final String? id;
+  const Posters({Key? key, this.id}) : super(key: key);
 
   @override
   _PostersState createState() => _PostersState();
@@ -22,7 +23,7 @@ class _PostersState extends State<Posters> {
 
   Future getData() async {
     var url = Uri.parse(
-        "https://api.themoviedb.org/3/movie/634649?api_key=acd2834a5e053a947ed184cacbfba58b&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br");
+        "https://api.themoviedb.org/3/movie/${widget.id}?api_key=acd2834a5e053a947ed184cacbfba58b&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br");
     var response = await http.get(url);
     List<dynamic> list = jsonDecode(response.body)["images"]["posters"];
     setState(() {

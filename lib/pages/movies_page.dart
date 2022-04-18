@@ -137,6 +137,7 @@ class _MoviesPageState extends State<MoviesPage> {
                             title: movie["original_title"],
                             releaseDate: movie["release_date"],
                             posterPath: movie["poster_path"],
+                            id: movie["id"].toString(),
                           );
                         }
                       },

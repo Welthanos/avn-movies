@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => const Home(),
         '/favorites': (context) => const Favorites(),
-        '/movie_detail': (context) => const MovieDetail(),
+        '/movie_detail': (context) => const MovieDetail(id: '', title: ''),
       },
       home: const Home(),
     );

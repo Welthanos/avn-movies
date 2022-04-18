@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
               label: "Filmes",
             ),
             BottomNavigationBarItem(
-              icon: Icon(MovieAppIcon.heart_empty, size: 24),
+              icon: Icon(MovieAppIcon.heartEmpty, size: 24),
               label: "Favoritos",
             ),
             BottomNavigationBarItem(

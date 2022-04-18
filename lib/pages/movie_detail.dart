@@ -5,7 +5,11 @@ import '../components/description.dart';
 import '../components/genres.dart';
 
 class MovieDetail extends StatelessWidget {
-  const MovieDetail({Key? key}) : super(key: key);
+  final String id;
+  final String title;
+
+  const MovieDetail({Key? key, required this.id, required this.title})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +39,14 @@ class MovieDetail extends StatelessWidget {
         ),
         child: ListView(
           children: [
-            const Posters(),
-            const SizedBox(height: 15),
-            const Padding(
-              padding: EdgeInsets.all(10),
+            Posters(id: id),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(10),
               child: Text(
-                "Spider-Man: No Way Home",
-                style: TextStyle(
-                  fontSize: 18,
+                title,
+                style: const TextStyle(
+                  fontSize: 20,
                   fontWeight: FontWeight.w700,
                 ),
                 overflow: TextOverflow.ellipsis,
@@ -53,17 +57,17 @@ class MovieDetail extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     "Categorias: ",
                     style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                   ),
-                  Genres(),
+                  Genres(id: id),
                 ],
               ),
             ),
             const SizedBox(height: 10),
-            const Description(),
+            Description(id: id),
           ],
         ),
       ),
