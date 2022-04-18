@@ -26,7 +26,11 @@ class MovieDetail extends StatelessWidget {
           color: Color.fromARGB(255, 192, 198, 255),
         ),
       ),
+
+      // Corpo da página de detalhes
       body: Container(
+
+        // Background (cor cinza e branco)
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(-1.0, 1.0),
@@ -37,10 +41,15 @@ class MovieDetail extends StatelessWidget {
             ],
           ),
         ),
+
         child: ListView(
           children: [
+
+            // Recebendo o id de Posters para confeccionar a tela
             Posters(id: id),
+
             const SizedBox(height: 10),
+
             Padding(
               padding: const EdgeInsets.all(10),
               child: Text(
@@ -53,7 +62,9 @@ class MovieDetail extends StatelessWidget {
                 maxLines: 1,
               ),
             ),
+
             const SizedBox(height: 6),
+
             Padding(
               padding: const EdgeInsets.all(10),
               child: Row(
@@ -62,11 +73,16 @@ class MovieDetail extends StatelessWidget {
                     "Categorias: ",
                     style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                   ),
+
+                  // Recebendo o id de Genres para confeccionar a tela
                   Genres(id: id),
                 ],
               ),
             ),
+
             const SizedBox(height: 10),
+
+            // Recebendo o id de Description para confeccionar a tela
             Description(id: id),
           ],
         ),

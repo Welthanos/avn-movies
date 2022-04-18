@@ -17,11 +17,12 @@ class _GenresState extends State<Genres> {
 
   @override
   void initState() {
-    getGenre();
+    getData();
     super.initState();
   }
 
-  Future getGenre() async {
+  // Requisição dos gêneros do filme
+  Future getData() async {
     var url = Uri.parse(
         "https://api.themoviedb.org/3/movie/${widget.id}?api_key=acd2834a5e053a947ed184cacbfba58b&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br");
     var response = await http.get(url);
@@ -36,6 +37,7 @@ class _GenresState extends State<Genres> {
     return SizedBox(
       width: 290,
       height: 16,
+      // Concatenando a lista dos gêneros
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: genreList.length,

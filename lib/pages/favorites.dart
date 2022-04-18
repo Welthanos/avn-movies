@@ -21,8 +21,12 @@ class _FavoritesState extends State<Favorites> {
             color: Color.fromARGB(255, 192, 198, 255),
           ),
         ),
+
+        // Removendo seta de voltar da AppBar
         automaticallyImplyLeading: false,
       ),
+
+      // Corpo da página de favoritos
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -38,22 +42,18 @@ class _FavoritesState extends State<Favorites> {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             children: [
-              const SizedBox(
-                height: 50,
-              ),
+
+              const SizedBox(height: 50),
+
               Row(
                 children: const [
-                  SizedBox(
-                    width: 5,
-                  ),
+                  SizedBox(width: 5),
                   Icon(
                     MovieAppIcon.heart,
                     size: 20,
                     color: Color.fromARGB(255, 11, 0, 160),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
+                  SizedBox(width: 10),
                   Text(
                     "Favoritados",
                     style: TextStyle(
@@ -64,9 +64,10 @@ class _FavoritesState extends State<Favorites> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 15,
-              ),
+
+              const SizedBox(height: 15),
+
+              // Cards dos filmes favoritados
               SizedBox(
                 height: 510,
                 child: ListView(

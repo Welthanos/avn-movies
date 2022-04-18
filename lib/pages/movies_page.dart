@@ -22,6 +22,7 @@ class _MoviesPageState extends State<MoviesPage> {
     super.initState();
   }
 
+  // Fazendo requisição dos filmes populares
   Future getData() async {
     var url = Uri.parse(
         "https://api.themoviedb.org/3/movie/popular?api_key=acd2834a5e053a947ed184cacbfba58b&language=en-US&page=1");
@@ -32,6 +33,7 @@ class _MoviesPageState extends State<MoviesPage> {
     });
   }
 
+  // Estabelecendo o estilo da barra de pesquisa
   InputDecoration fieldDecor = InputDecoration(
     filled: true,
     fillColor: const Color.fromARGB(255, 11, 0, 160),
@@ -67,9 +69,14 @@ class _MoviesPageState extends State<MoviesPage> {
             color: Color.fromARGB(255, 192, 198, 255),
           ),
         ),
+
+        // retirando a seta "voltar"
         automaticallyImplyLeading: false,
       ),
+
+      // Corpo da página de filmes
       body: Container(
+        // Background (cor cinza e branco)
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(-1.0, 1.0),
@@ -80,16 +87,20 @@ class _MoviesPageState extends State<MoviesPage> {
             ],
           ),
         ),
+
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
+
+          // Scroll do plano vertical (em caso de ativação do teclado)
           child: ListView(
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 20,
-                  ),
+
+                  const SizedBox(height: 20),
+
+                  // Estilizando textos da barra de pesquisa
                   TextField(
                     style: const TextStyle(
                       color: Color.fromARGB(255, 192, 198, 255),
@@ -100,19 +111,21 @@ class _MoviesPageState extends State<MoviesPage> {
                   const SizedBox(
                     height: 40,
                   ),
+
+                  // Nome e ícone da área de filmes
                   Row(
                     children: const [
-                      SizedBox(
-                        height: 5,
-                      ),
+
+                      SizedBox(height: 5),
+
                       Icon(
                         Icons.star,
                         size: 30,
                         color: Color.fromARGB(255, 11, 0, 160),
                       ),
-                      SizedBox(
-                        width: 8,
-                      ),
+
+                      SizedBox(width: 8),
+
                       Text(
                         "Filmes Populares",
                         style: TextStyle(
@@ -123,6 +136,8 @@ class _MoviesPageState extends State<MoviesPage> {
                       ),
                     ],
                   ),
+
+                  // Estabelecendo os limites dos cards dos filmes e configurando o scroll
                   SizedBox(
                     height: 510,
                     child: ListView.builder(
@@ -133,6 +148,8 @@ class _MoviesPageState extends State<MoviesPage> {
                           return const Text("lista vazia");
                         } else {
                           final movie = movieList[index];
+
+                          // Gerando a lista dos filmes populares
                           return MovieCard(
                             title: movie["original_title"],
                             releaseDate: movie["release_date"],

@@ -20,8 +20,12 @@ class MovieCard extends StatelessWidget {
     return SizedBox(
       width: 300,
       child: InkWell(
+
+        // Configurando a rota para a página de detalhes do filme selecionado
         onTap: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => MovieDetail(id: id, title: title))),
+        
+        // Propriedades dos cards
         child: Stack(
           children: [
             Padding(
@@ -35,6 +39,8 @@ class MovieCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
+                      
+                      // Checando valores nulos para imagens
                       child: posterPath == null
                           ? Container(
                               color: Colors.blueGrey,
@@ -47,7 +53,9 @@ class MovieCard extends StatelessWidget {
                             ),
                     ),
                   ),
+                  
                   const SizedBox(height: 15),
+
                   Text(
                     title,
                     style: const TextStyle(
@@ -57,7 +65,9 @@ class MovieCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                   ),
+
                   const SizedBox(height: 6),
+
                   Text(
                     releaseDate,
                     style: const TextStyle(

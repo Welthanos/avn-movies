@@ -20,7 +20,7 @@ class _PostersState extends State<Posters> {
     getData();
     super.initState();
   }
-
+  // Requisição das strings de endereço para os posters do filme
   Future getData() async {
     var url = Uri.parse(
         "https://api.themoviedb.org/3/movie/${widget.id}?api_key=acd2834a5e053a947ed184cacbfba58b&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br");
@@ -46,6 +46,8 @@ class _PostersState extends State<Posters> {
             final poster = posterList[index];
             return Padding(
               padding: const EdgeInsets.only(right: 2),
+
+              // Concatenando a requisição com a URL padrão de imagens para acessar os posters
               child: Image.network(
                 'https://image.tmdb.org/t/p/w500${poster["file_path"]}',
                 fit: BoxFit.cover,

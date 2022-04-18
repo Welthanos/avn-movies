@@ -29,6 +29,8 @@ class _HomeState extends State<Home> {
     setState(
       () {
         _currentIndex = index;
+
+        // Saindo da aplicação ao clicar no ícone de saída
         if (index == 2) {
           if (Platform.isAndroid) {
             SystemNavigator.pop();
@@ -49,6 +51,8 @@ class _HomeState extends State<Home> {
         onPageChanged: _onPageChanged,
         physics: const NeverScrollableScrollPhysics(),
       ),
+
+      // Propriedades da barra de navegação
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           canvasColor: const Color.fromARGB(255, 11, 0, 160),
@@ -63,17 +67,19 @@ class _HomeState extends State<Home> {
           onTap: (index) => _onItemTap(index),
           currentIndex: _currentIndex,
           items: const <BottomNavigationBarItem>[
+
+            // Conteúdo da barra de navegação
             BottomNavigationBarItem(
               icon: Icon(Icons.movie, size: 30),
-              label: "Filmes",
+              label: "Filmes"
             ),
             BottomNavigationBarItem(
               icon: Icon(MovieAppIcon.heartEmpty, size: 24),
-              label: "Favoritos",
+              label: "Favoritos"
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.exit_to_app, size: 30),
-              label: "Sair",
+              label: "Sair"
             ),
           ],
         ),

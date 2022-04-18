@@ -1,0 +1,21 @@
+# Introduction
+
+A API disponibilizada pelo The Movie BD traz informações sobre os filmes catalogados pelo site.
+
+
+# Overview
+
+Requests (GET):
+
+- Para buscar os filmes populares - https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=<<page_number>>
+
+- Para buscar os detalhes dos filmes - https://api.themoviedb.org/3/movie/<<id_filme>>?api_key=<<api_key>>&language=pt-br&append_to_response=images,credits&include_image_language=en,pt-br
+
+- O acesso às imagens disponibilizadas necessitam da concatenação do endereço padrão 'https://image.tmdb.org/t/p/w500' com o valor da chave 'poster_path'. Ex.: https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg
+
+
+# Authentication
+
+Para ter acesso é necessário possuir uma API key, obtida através do cadastro no site do The Movie DB.
+
+
